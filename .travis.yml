@@ -1,0 +1,16 @@
+sudo: required
+
+language: generic
+
+services:
+ - docker
+
+ before_install:
+  - echo "start"
+  - docker build -t minju7346/react -f dockerfile.dev .
+
+  script:
+   - docker run -e CI=true minju7346/react npm run test -- --coverage
+  
+  after_success:
+   - echo "success"

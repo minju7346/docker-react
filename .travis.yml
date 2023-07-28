@@ -10,6 +10,7 @@ before_install:
  - docker build -t minju7346/react -f dockerfile.dev .
 
 script:
+ - docker rm -f $(docker ps -qa)
  - docker run -e CI=true minju7346/react npm run test -- --coverage
   
 deploy:

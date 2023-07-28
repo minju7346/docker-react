@@ -18,7 +18,7 @@
 #      - /usr/src/app/node_modules
 #      - ./:/usr/src/app
 #     command: ["npm", "run", "test"]
-version: "3"
+version: "4"
 
 services:
 
